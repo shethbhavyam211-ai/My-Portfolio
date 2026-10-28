@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies & Interests | Bhavya Manish Sheth</title>
+  <meta name="description" content="Discover Bhavya Manish Sheth's hobbies, creative coding experiments, astronomy interests, and strategic passions.">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Dynamic Particle Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-initials">BS</div>
+        <div>
+          <span style="font-weight: 800;">Bhavya</span>
+          <span style="color: var(--c-teal); font-weight: 500;"> Sheth</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="hobbies.html" class="nav-link active">Hobbies</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right-action">
+        <a href="mailto:shethbhavyam211@gmail.com" class="status-badge" style="text-decoration: none;">
+          <span class="status-dot"></span>
+          <span>shethbhavyam211@gmail.com</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section style="padding: 60px 0 30px 0;">
+    <div class="container">
+      <span class="section-tag">CREATIVE BALANCE & PASSIONS</span>
+      <h1 style="font-size: clamp(2.4rem, 4vw, 3.4rem); margin-bottom: 16px;">
+        Hobbies & <span class="text-gradient">Personal Interests</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 780px;">
+        Beyond academic coursework, I explore creative coding, follow cosmology and space missions, play strategic chess, and design interactive visual interfaces.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Creative Coding Studio -->
+  <section style="padding-top: 10px;">
+    <div class="container">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin-bottom: 70px;">
+        
+        <!-- Live Canvas -->
+        <div class="canvas-wrapper">
+          <canvas id="hobbiesCanvas"></canvas>
+          
+          <div style="position: absolute; top: 14px; left: 14px; background: rgba(8, 15, 43, 0.85); border: 1px solid var(--border-subtle); padding: 6px 12px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--c-mint);">
+            MODE: <span id="artModeLabel" style="color: var(--c-cream); font-weight: bold;">Neural Harmonic Waves</span>
+          </div>
+
+          <div style="position: absolute; bottom: 14px; right: 14px; display: flex; gap: 8px;">
+            <button id="btnCycleArt" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">
+              ⚡ Cycle Pattern
+            </button>
+            <button id="btnCaptureArt" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.82rem;">
+              📸 Save Art
+            </button>
+          </div>
+        </div>
+
+        <!-- Hobby Description -->
+        <div>
+          <span class="card-badge">HOBBY #01 • CREATIVE CODING</span>
+          <h2 style="font-size: 2rem; margin-bottom: 14px;">Generative Art & Algorithmic Math</h2>
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 16px; line-height: 1.7;">
+            One of my favorite hobbies is writing pure mathematical algorithms that render organic, fluid visuals directly onto HTML5 canvases. By combining trigonometric waves, harmonic oscillations, and particle velocity vectors, I build interactive visual systems that respond to mouse coordinates.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.7;">
+            This canvas uses my signature 5-color palette: Deep Navy (<span class="mono" style="color: var(--c-mint);">#132c91</span>), Cobalt Blue (<span class="mono" style="color: var(--c-blue);">#2970db</span>), Vivid Cyan (<span class="mono" style="color: var(--c-teal);">#4fd4d2</span>), Mint Aqua (<span class="mono" style="color: var(--c-mint);">#81e9e6</span>), and Warm Cream (<span class="mono" style="color: var(--c-cream);">#fefcc0</span>).
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Additional Hobbies Grid -->
+      <div class="section-header">
+        <span class="section-tag">Diverse Pursuits</span>
+        <h2 class="section-title">What I Love Exploring</h2>
+        <p class="section-desc">Hobbies that keep my analytical and creative thinking sharp.</p>
+      </div>
+
+      <div class="cards-grid">
+        
+        <!-- Hobby 2: Astronomy & Space Exploration -->
+        <div class="glass-card">
+          <div class="card-icon">🌌</div>
+          <span class="card-badge">CURIOSITY</span>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Astronomy & Space Tech</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 14px;">
+            A passionate interest in following modern space missions, rocket launch telemetry, astrophysics documentaries, and orbital satellite tracking. Stargazing and tracking celestial transits is a constant source of wonder.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">Cosmology</span>
+            <span class="tech-tag">Rocket Launches</span>
+            <span class="tech-tag">Astrophysics</span>
+          </div>
+        </div>
+
+        <!-- Hobby 3: Chess & Strategy -->
+        <div class="glass-card">
+          <div class="card-icon">♟️</div>
+          <span class="card-badge">STRATEGY</span>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Chess & Logic Puzzles</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 14px;">
+            I enjoy rapid and blitz chess games, studying positional opening theories, and solving algorithmic riddles that train tactical foresight and patience under time pressure.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">Tactical Foresight</span>
+            <span class="tech-tag">Opening Theory</span>
+            <span class="tech-tag">Logic Riddles</span>
+          </div>
+        </div>
+
+        <!-- Hobby 4: Tech & Sci-Fi Reading -->
+        <div class="glass-card">
+          <div class="card-icon">📚</div>
+          <span class="card-badge">KNOWLEDGE</span>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Tech & Sci-Fi Literature</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 14px;">
+            Reading research publications on emerging AI trends, articles on computing history, and thought-provoking science fiction exploring the ethical and social impacts of intelligent software.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">AI Publications</span>
+            <span class="tech-tag">Futurism</span>
+            <span class="tech-tag">Sci-Fi Novels</span>
+          </div>
+        </div>
+
+        <!-- Hobby 5: Digital Design -->
+        <div class="glass-card">
+          <div class="card-icon">🎨</div>
+          <span class="card-badge">CREATIVE</span>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Digital Design & UI Prototyping</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 14px;">
+            Experimenting with balanced color schemes, typography hierarchy, micro-interactions, and modern glassmorphic aesthetics that elevate user interfaces from functional to delightful.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">UI/UX Design</span>
+            <span class="tech-tag">Color Systems</span>
+            <span class="tech-tag">Typography</span>
+          </div>
+        </div>
+
+        <!-- Hobby 6: Tech Discussions -->
+        <div class="glass-card">
+          <div class="card-icon">🤝</div>
+          <span class="card-badge">COMMUNITY</span>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Collegiate Tech Meetups</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 14px;">
+            Collaborating with peers on campus, attending local developer workshops, sharing programming resources, and brainstorming creative hackathon team concepts.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">Peer Learning</span>
+            <span class="tech-tag">Campus Clubs</span>
+            <span class="tech-tag">Hackathon Ideation</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        <strong style="color: #fff;">Bhavya Manish Sheth</strong> — Hobbies & Interests
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+          Email: <a href="mailto:shethbhavyam211@gmail.com" style="color: var(--c-teal);">shethbhavyam211@gmail.com</a>
+        </div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/ambient.js"></script>
+  <script src="assets/js/hobbies-canvas.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

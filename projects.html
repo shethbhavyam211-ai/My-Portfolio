@@ -3,64 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects & Laboratories | AERO-FOLIO</title>
-  <meta name="description" content="Projects and experiments by a 1st-Year CSE (AI & ML) student in Space Tech, Rocket Satellites, and Artificial Intelligence.">
-  
-  <!-- Fonts -->
+  <title>Projects & Laboratories | Bhavya Manish Sheth</title>
+  <meta name="description" content="Technical projects and software developments by Bhavya Manish Sheth in Artificial Intelligence, Machine Learning, and Web Engineering.">
+
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Starfield Canvas -->
-  <canvas id="starfield-canvas"></canvas>
+  <!-- Ambient Dynamic Particle Background -->
+  <canvas id="ambient-canvas"></canvas>
 
-  <!-- Navigation Header -->
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
-        <div class="brand-symbol">🛰️</div>
-        <span>AERO<span style="color: #fff;">PORTFOLIO</span></span>
+        <div class="brand-initials">BS</div>
+        <div>
+          <span style="font-weight: 800;">Bhavya</span>
+          <span style="color: var(--c-teal); font-weight: 500;"> Sheth</span>
+        </div>
       </a>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="nav-link">Mission Control</a></li>
-        <li><a href="space-tech.html" class="nav-link">Space Tech & Satellites</a></li>
-        <li><a href="exploration-art.html" class="nav-link">Creative Art & Tech</a></li>
-        <li><a href="projects.html" class="nav-link active">Projects & Labs</a></li>
-        <li><a href="contact.html" class="nav-link">Transmission</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="hobbies.html" class="nav-link">Hobbies</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <div class="status-badge">
+      <div class="nav-right-action">
+        <a href="mailto:shethbhavyam211@gmail.com" class="status-badge" style="text-decoration: none;">
           <span class="status-dot"></span>
-          <span>YEAR 1 REPOSITORY • ACTIVE</span>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+          <span>shethbhavyam211@gmail.com</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
       </div>
     </div>
   </header>
 
   <!-- Page Header -->
-  <section style="padding: 50px 0 30px 0;">
+  <section style="padding: 60px 0 30px 0;">
     <div class="container">
-      <span class="section-tag">ENGINEERING LABS & CODE</span>
-      <h1 style="font-size: clamp(2.4rem, 4vw, 3.6rem); margin-bottom: 16px;">
-        Projects & <span class="text-gradient">Space AI</span> Prototypes
+      <span class="section-tag">ENGINEERING PORTFOLIO</span>
+      <h1 style="font-size: clamp(2.4rem, 4vw, 3.4rem); margin-bottom: 16px;">
+        Projects & <span class="text-gradient">Technical Works</span>
       </h1>
       <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 780px;">
-        A modular showcase of my 1st-year engineering builds, space simulations, and machine learning models. Built to be updated as I advance through my semesters!
+        A curated showcase of applications, machine learning experiments, and algorithmic tools engineered during my first year in computer science.
       </p>
 
-      <!-- Category Filter Buttons -->
+      <!-- Category Filter Tabs -->
       <div style="display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap;">
-        <button class="filter-btn btn btn-primary" data-filter="all">All Missions</button>
-        <button class="filter-btn btn btn-secondary" data-filter="space">🚀 Space Tech & Satellites</button>
+        <button class="filter-btn btn btn-primary" data-filter="all">All Projects</button>
         <button class="filter-btn btn btn-secondary" data-filter="ai">🧠 AI & Machine Learning</button>
-        <button class="filter-btn btn btn-secondary" data-filter="creative">🎨 Creative & Visuals</button>
+        <button class="filter-btn btn btn-secondary" data-filter="web">💻 Web & Productivity</button>
+        <button class="filter-btn btn btn-secondary" data-filter="algo">⚡ Algorithms & Data</button>
       </div>
     </div>
   </section>
@@ -69,126 +72,126 @@
   <section style="padding-top: 10px;">
     <div class="container">
       
-      <div class="cards-grid" id="projectsContainer">
+      <div class="cards-grid">
         
-        <!-- Project 1: Orbit Simulator -->
-        <div class="glass-card project-card" data-category="space">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="card-icon">🛰️</div>
-            <span class="card-badge">INTERACTIVE SIM</span>
-          </div>
-          <h3 class="card-title">CubeSat Orbital Mechanics Engine</h3>
-          <p class="card-desc">
-            A real-time 2D orbital physics calculator modeling Keplerian velocities, orbital decay altitudes, and ground station line-of-sight passes in Low Earth Orbit.
-          </p>
-          <div class="tag-list" style="margin-bottom: 20px;">
-            <span class="tech-tag">HTML5 Canvas</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Astrodynamics</span>
-          </div>
-          <a href="space-tech.html" class="btn btn-secondary" style="width: 100%;">
-            <span>Launch Live Demo ↗</span>
-          </a>
-        </div>
-
-        <!-- Project 2: Satellite Earth Observation AI -->
+        <!-- Project 1: Academic Performance Predictor -->
         <div class="glass-card project-card" data-category="ai">
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div class="card-icon">🧠</div>
-            <span class="card-badge">AI / VISION</span>
+            <span class="card-badge">MACHINE LEARNING</span>
           </div>
-          <h3 class="card-title">Satellite Multispectral Cloud Segmenter</h3>
-          <p class="card-desc">
-            Convolutional Neural Network (CNN) architecture trained to detect and mask heavy cloud coverage on satellite remote sensing data before transmission.
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Academic Performance Predictor</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            A regression and classification ML model trained on student attendance records, daily study hours, and test habits to predict GPA outcomes.
           </p>
           <div class="tag-list" style="margin-bottom: 20px;">
             <span class="tech-tag">Python</span>
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">Scikit-Learn</span>
+            <span class="tech-tag">Pandas</span>
           </div>
-          <a href="https://github.com" target="_blank" class="btn btn-secondary" style="width: 100%;">
-            <span>Inspect GitHub Repo ↗</span>
-          </a>
+          <button class="btn btn-secondary btn-open-modal" data-project="grade-predictor" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
         </div>
 
-        <!-- Project 3: Rocket Trajectory & Delta-V -->
-        <div class="glass-card project-card" data-category="space">
+        <!-- Project 2: Algorithm Visualizer -->
+        <div class="glass-card project-card" data-category="algo">
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="card-icon">🚀</div>
-            <span class="card-badge">PROPULSION</span>
+            <div class="card-icon">⚡</div>
+            <span class="card-badge">ALGORITHMS</span>
           </div>
-          <h3 class="card-title">Rocket Ascent & Delta-V Budget Tool</h3>
-          <p class="card-desc">
-            Numerical integrator calculating gravity turn trajectory, dynamic pressure (Max-Q), and stage propellant mass ratios using Tsiolkovsky equations.
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Sorting & Pathfinding Visualizer</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            An interactive JavaScript canvas engine demonstrating sorting algorithms (Quick Sort, Merge Sort) and Dijkstra pathfinding step-by-step.
           </p>
           <div class="tag-list" style="margin-bottom: 20px;">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">NumPy</span>
-            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">HTML5 Canvas</span>
+            <span class="tech-tag">Data Structures</span>
           </div>
-          <a href="https://github.com" target="_blank" class="btn btn-secondary" style="width: 100%;">
-            <span>Inspect GitHub Repo ↗</span>
-          </a>
+          <button class="btn btn-secondary btn-open-modal" data-project="algo-visualizer" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
         </div>
 
-        <!-- Project 4: Interactive Telemetry Bot -->
+        <!-- Project 3: Bhavya-AI Assistant -->
         <div class="glass-card project-card" data-category="ai">
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div class="card-icon">🤖</div>
-            <span class="card-badge">WEB AGENT</span>
+            <span class="card-badge">AI AGENT</span>
           </div>
-          <h3 class="card-title">AERO-AI Autonomous Flight Assistant</h3>
-          <p class="card-desc">
-            Frontend conversational portfolio guide with sound telemetry synthesis through Web Audio API, responsive chips, and domain-specific space tech reasoning.
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Bhavya-AI Portfolio Assistant</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            A responsive frontend conversational assistant equipped with domain-specific question answering and Web Audio API tone synthesis.
           </p>
           <div class="tag-list" style="margin-bottom: 20px;">
-            <span class="tech-tag">Web Audio API</span>
             <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Web Audio API</span>
             <span class="tech-tag">UI/UX</span>
           </div>
-          <a href="index.html#heroChatbot" class="btn btn-secondary" style="width: 100%;">
-            <span>Interact in Hero ↗</span>
-          </a>
+          <button class="btn btn-secondary btn-open-modal" data-project="bhavya-ai" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
         </div>
 
-        <!-- Project 5: Generative Art Cosmos -->
-        <div class="glass-card project-card" data-category="creative">
+        <!-- Project 4: Smart Task Tracker -->
+        <div class="glass-card project-card" data-category="web">
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="card-icon">🎨</div>
-            <span class="card-badge">GENERATIVE</span>
+            <div class="card-icon">📝</div>
+            <span class="card-badge">PRODUCTIVITY</span>
           </div>
-          <h3 class="card-title">Algorithmic Cosmic Trajectory Canvas</h3>
-          <p class="card-desc">
-            Interactive canvas shader blending neural network synapse graphs with gravitational spiral math, themed in ice-aero cyan (#E0F2F4).
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Smart Task & Study Habit Tracker</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            A modern, glassmorphic productivity application with local storage persistence, deadline alerts, and study session counters.
           </p>
           <div class="tag-list" style="margin-bottom: 20px;">
-            <span class="tech-tag">Creative Coding</span>
-            <span class="tech-tag">Canvas 2D</span>
-            <span class="tech-tag">Fractals</span>
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">Vanilla CSS</span>
+            <span class="tech-tag">LocalStorage</span>
           </div>
-          <a href="exploration-art.html" class="btn btn-secondary" style="width: 100%;">
-            <span>Launch Studio ↗</span>
-          </a>
+          <button class="btn btn-secondary btn-open-modal" data-project="task-tracker" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
         </div>
 
-        <!-- Project 6: Ground Station SDR -->
-        <div class="glass-card project-card" data-category="space">
+        <!-- Project 5: Computer Vision Detector -->
+        <div class="glass-card project-card" data-category="ai">
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="card-icon">📡</div>
-            <span class="card-badge">TELEMETRY</span>
+            <div class="card-icon">👁️</div>
+            <span class="card-badge">COMPUTER VISION</span>
           </div>
-          <h3 class="card-title">CubeSat SDR Telemetry Packet Decoder</h3>
-          <p class="card-desc">
-            Studying radio frequency packet reception from amateur radio satellites (e.g. NOAA APT, AO-91) using RTL-SDR software receivers and automated parsing.
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Computer Vision Object Recognition</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            Experimenting with OpenCV and deep convolutional neural networks to perform real-time video feed classification and bounding box localization.
           </p>
           <div class="tag-list" style="margin-bottom: 20px;">
-            <span class="tech-tag">RTL-SDR</span>
-            <span class="tech-tag">Radio Frequency</span>
-            <span class="tech-tag">GNU Radio</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">PyTorch</span>
           </div>
-          <a href="space-tech.html" class="btn btn-secondary" style="width: 100%;">
-            <span>View Radio Notes ↗</span>
-          </a>
+          <button class="btn btn-secondary btn-open-modal" data-project="vision-detector" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
+        </div>
+
+        <!-- Project 6: CSV Data Analyzer -->
+        <div class="glass-card project-card" data-category="algo">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div class="card-icon">📊</div>
+            <span class="card-badge">DATA ANALYTICS</span>
+          </div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Automated CSV Data Analyzer</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            A Python utility to ingest raw spreadsheets, handle missing values, compute statistical metrics, and generate clean visualization plots.
+          </p>
+          <div class="tag-list" style="margin-bottom: 20px;">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Seaborn</span>
+          </div>
+          <button class="btn btn-secondary btn-open-modal" data-project="data-analyzer" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
         </div>
 
       </div>
@@ -196,68 +199,45 @@
     </div>
   </section>
 
-  <!-- Easy Customization Notice for Student -->
-  <section style="padding: 40px 0;">
-    <div class="container">
-      <div style="background: rgba(224, 242, 244, 0.05); border: 1px dashed var(--color-aero-border); padding: 28px; border-radius: var(--border-radius-md); text-align: center;">
-        <h3 style="color: var(--color-aero-primary); margin-bottom: 8px;">🚀 Ready to add your upcoming semester projects?</h3>
-        <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 16px auto; font-size: 0.95rem;">
-          Each project card is cleanly isolated in <code style="color: var(--color-aero-primary);">projects.html</code>. Simply duplicate any <code style="color: var(--color-aero-primary);">&lt;div class="glass-card"&gt;</code> block to add your new hackathons, research papers, or satellite builds!
-        </p>
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <span class="card-badge" id="modalBadge">PROJECT</span>
+      <h3 style="font-size: 1.5rem; margin-bottom: 12px;" id="modalTitle">Project Title</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;" id="modalDescription">Description</p>
+      
+      <div style="margin-bottom: 20px;">
+        <h4 style="font-size: 0.95rem; color: var(--c-cream); margin-bottom: 8px;">Key Implementation Highlights:</h4>
+        <ul id="modalHighlights" style="padding-left: 20px; font-size: 0.9rem;"></ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; color: var(--c-mint); margin-bottom: 8px;">Technologies Applied:</h4>
+        <div class="tag-list" id="modalTechStack"></div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
       <div class="footer-text">
-        <strong style="color: var(--color-aero-primary);">AERO-FOLIO</strong> — Projects & Laboratories
+        <strong style="color: #fff;">Bhavya Manish Sheth</strong> — Projects & Labs
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+          Direct Contact: <a href="mailto:shethbhavyam211@gmail.com" style="color: var(--c-teal);">shethbhavyam211@gmail.com</a>
+        </div>
       </div>
       <ul class="footer-links">
-        <li><a href="index.html">Mission Control</a></li>
-        <li><a href="space-tech.html">Space Tech Lab</a></li>
-        <li><a href="exploration-art.html">Creative Art</a></li>
-        <li><a href="contact.html">Transmission</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="assets/js/starfield.js"></script>
-  <script>
-    // Filter projects
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => {
-          b.classList.remove('btn-primary');
-          b.classList.add('btn-secondary');
-        });
-        btn.classList.remove('btn-secondary');
-        btn.classList.add('btn-primary');
-
-        const filter = btn.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (mobileToggle && navMenu) {
-      mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-      });
-    }
-  </script>
+  <script src="assets/js/ambient.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

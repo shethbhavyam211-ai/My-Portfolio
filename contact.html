@@ -3,172 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transmission & Contact | AERO-FOLIO</title>
-  <meta name="description" content="Send a telemetry transmission or connect with a 1st-Year CSE (AI & ML) Space Tech Explorer.">
-  
-  <!-- Fonts -->
+  <title>Contact Bhavya Manish Sheth | Get In Touch</title>
+  <meta name="description" content="Get in touch with Bhavya Manish Sheth, 1st Year B.Tech CSE (AI & ML) student. Email: shethbhavyam211@gmail.com.">
+
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Starfield Canvas -->
-  <canvas id="starfield-canvas"></canvas>
+  <!-- Ambient Dynamic Particle Background -->
+  <canvas id="ambient-canvas"></canvas>
 
-  <!-- Navigation Header -->
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
-        <div class="brand-symbol">🛰️</div>
-        <span>AERO<span style="color: #fff;">PORTFOLIO</span></span>
+        <div class="brand-initials">BS</div>
+        <div>
+          <span style="font-weight: 800;">Bhavya</span>
+          <span style="color: var(--c-teal); font-weight: 500;"> Sheth</span>
+        </div>
       </a>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="nav-link">Mission Control</a></li>
-        <li><a href="space-tech.html" class="nav-link">Space Tech & Satellites</a></li>
-        <li><a href="exploration-art.html" class="nav-link">Creative Art & Tech</a></li>
-        <li><a href="projects.html" class="nav-link">Projects & Labs</a></li>
-        <li><a href="contact.html" class="nav-link active">Transmission</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="hobbies.html" class="nav-link">Hobbies</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <div class="status-badge">
+      <div class="nav-right-action">
+        <a href="mailto:shethbhavyam211@gmail.com" class="status-badge" style="text-decoration: none;">
           <span class="status-dot"></span>
-          <span>COMM LINK • OPEN</span>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+          <span>shethbhavyam211@gmail.com</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
       </div>
     </div>
   </header>
 
   <!-- Page Header -->
-  <section style="padding: 50px 0 30px 0;">
+  <section style="padding: 60px 0 30px 0;">
     <div class="container" style="text-align: center;">
-      <span class="section-tag">COMMUNICATION LINK</span>
-      <h1 style="font-size: clamp(2.4rem, 4vw, 3.6rem); margin-bottom: 16px;">
-        Open a <span class="text-gradient">Sub-Space Transmission</span>
+      <span class="section-tag">COMMUNICATION & INQUIRIES</span>
+      <h1 style="font-size: clamp(2.4rem, 4vw, 3.4rem); margin-bottom: 16px;">
+        Get in Touch with <span class="text-gradient">Bhavya Manish Sheth</span>
       </h1>
       <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 680px; margin: 0 auto;">
-        Whether you are interested in satellite telemetry collaboration, university space clubs, AI research, or hackathon partnerships—my comms channels are open.
+        Whether you have a question about my coursework, want to collaborate on a software project, or invite me to a student hackathon—feel free to drop a message!
       </p>
     </div>
   </section>
 
-  <!-- Transmission Form & Social Matrix -->
+  <!-- Contact Portal & Direct Cards -->
   <section style="padding-top: 10px;">
     <div class="container">
       
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: start;">
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: start;">
         
-        <!-- Interactive Form -->
-        <div class="transmission-form-container">
-          <h2 style="font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-            <span>📡 Telemetry Message Packet</span>
+        <!-- Contact Form -->
+        <div class="contact-container">
+          <h2 style="font-size: 1.45rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <span>✉️ Send a Direct Message</span>
           </h2>
 
-          <form id="transmissionForm">
+          <form id="contactForm">
             <div class="form-group">
-              <label class="form-label" for="senderName">CALLSIGN / NAME</label>
-              <input type="text" id="senderName" class="form-input" placeholder="e.g. Commander Alex or Prof. Vance" required>
+              <label class="form-label" for="contactName">YOUR FULL NAME</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Rahul Sharma or Dr. Vance" required>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="senderEmail">TRANSMISSION FREQUENCY (EMAIL)</label>
-              <input type="email" id="senderEmail" class="form-input" placeholder="youremail@domain.com" required>
+              <label class="form-label" for="contactEmail">YOUR EMAIL ADDRESS</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="name@example.com" required>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="missionTopic">MISSION / SUBJECT</label>
-              <select id="missionTopic" class="form-input" style="background: rgba(14, 25, 48, 0.95);">
-                <option value="space-collaboration">🚀 Space Tech & Rocket Satellite Research</option>
-                <option value="ai-hackathon">🧠 AI & Machine Learning Hackathon</option>
-                <option value="student-club">🛰️ College Satellite Team Collaboration</option>
-                <option value="general">💬 General Exploration & Hello</option>
+              <label class="form-label" for="contactSubject">TOPIC / REASON FOR CONNECTING</label>
+              <select id="contactSubject" class="form-input" style="background: rgba(14, 25, 69, 0.95);">
+                <option value="collaboration">🤝 Software & Hackathon Collaboration</option>
+                <option value="project-inquiry">🧠 AI & Machine Learning Discussion</option>
+                <option value="general-networking">💬 General Networking & Hello</option>
+                <option value="mentorship">🎓 Academic Guidance / Mentorship</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="messageContent">PACKET DATA / MESSAGE</label>
-              <textarea id="messageContent" class="form-textarea" placeholder="Enter your transmission coordinates and message..." required></textarea>
+              <label class="form-label" for="contactMessage">YOUR MESSAGE</label>
+              <textarea id="contactMessage" class="form-textarea" placeholder="Write your message here..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" id="btnTransmit" style="width: 100%;">
-              <span>🚀 Broadcast Transmission Packet</span>
+            <button type="submit" class="btn btn-primary" id="btnSendMessage" style="width: 100%;">
+              <span>Send Message 🚀</span>
             </button>
           </form>
 
-          <!-- Telemetry Status Banner after submit -->
-          <div id="transmissionResult" style="display: none; margin-top: 20px; padding: 16px; border-radius: var(--border-radius-sm); background: rgba(0, 255, 170, 0.1); border: 1px solid var(--color-telemetry-green); color: var(--color-telemetry-green); font-family: var(--font-mono); font-size: 0.88rem;">
-            ✅ <strong>TRANSMISSION LOGGED:</strong> Packet encoded at 144.390 MHz. Telemetry received successfully! I will reply to your frequency promptly.
+          <!-- Confirmation Banner -->
+          <div id="contactSuccessMsg" style="display: none; margin-top: 20px; padding: 16px; border-radius: var(--radius-sm); background: rgba(79, 212, 210, 0.12); border: 1px solid var(--c-teal); color: var(--c-cream); font-family: var(--font-mono); font-size: 0.88rem;">
+            ✅ <strong>Message Received:</strong> Thank you for reaching out! Your message has been logged, and Bhavya will get back to you at your provided email promptly.
           </div>
         </div>
 
-        <!-- Social & Frequencies Matrix -->
+        <!-- Direct Connect Channels -->
         <div style="display: flex; flex-direction: column; gap: 24px;">
           
-          <div class="glass-card">
-            <h3 style="font-size: 1.25rem; margin-bottom: 14px; color: var(--color-aero-primary);">🛰️ Ground Stations & Socials</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-              Connect directly via any of these operational links:
+          <!-- Primary Email Card -->
+          <div class="glass-card" style="border-color: var(--border-accent); background: linear-gradient(135deg, rgba(19, 44, 145, 0.4), rgba(41, 112, 219, 0.2));">
+            <span class="card-badge" style="background: var(--c-cream); color: #10215e; font-weight: bold;">PRIMARY EMAIL CHANNEL</span>
+            <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">shethbhavyam211@gmail.com</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 18px;">
+              Direct inbox for all academic, project, and personal communications. Checked daily.
             </p>
 
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              <a href="https://github.com" target="_blank" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <span style="font-size: 1.2rem;">💻</span>
-                  <div>
-                    <div style="font-weight: 600; color: #fff;">GitHub</div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted);">github.com/your-username</div>
-                  </div>
-                </div>
-                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <a href="mailto:shethbhavyam211@gmail.com" class="btn btn-primary" style="width: 100%;">
+                <span>✉️ Open Mail Client</span>
               </a>
-
-              <a href="https://linkedin.com" target="_blank" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <span style="font-size: 1.2rem;">💼</span>
-                  <div>
-                    <div style="font-weight: 600; color: #fff;">LinkedIn</div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted);">linkedin.com/in/your-profile</div>
-                  </div>
-                </div>
-                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
-              </a>
-
-              <a href="mailto:your.email@college.edu" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <span style="font-size: 1.2rem;">✉️</span>
-                  <div>
-                    <div style="font-weight: 600; color: #fff;">Institutional Email</div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted);">student@college.edu</div>
-                  </div>
-                </div>
-                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
-              </a>
-
-              <a href="https://discord.com" target="_blank" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <span style="font-size: 1.2rem;">👾</span>
-                  <div>
-                    <div style="font-weight: 600; color: #fff;">Discord / Orbit Comms</div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted);">AeroExplorer#0001</div>
-                  </div>
-                </div>
-                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
-              </a>
+              <button class="btn btn-secondary btn-copy-email" style="width: 100%;">
+                <span>📋 Copy Email Address</span>
+              </button>
             </div>
           </div>
 
-          <!-- Academic Status Box -->
-          <div class="glass-card" style="background: rgba(14, 25, 48, 0.4);">
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-aero-primary); margin-bottom: 6px;">CURRENT LOCATION & BASE</div>
-            <p style="color: var(--text-muted); font-size: 0.92rem;">
-              Department of Computer Science & Engineering (AI & ML)<br>
-              Semester: 1st Year Undergrad<br>
-              Focus: Spacecraft Telemetry & Deep Learning
+          <!-- Professional Profiles Card -->
+          <div class="glass-card">
+            <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--c-mint);">🌐 Professional Links</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="background: rgba(19, 44, 145, 0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.2rem;">💼</span>
+                  <div>
+                    <div style="font-weight: 600; color: #fff; font-size: 0.95rem;">LinkedIn</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted);">linkedin.com/in/bhavya-manish-sheth</div>
+                  </div>
+                </div>
+                <span class="mono" style="color: var(--c-cream); font-size: 0.8rem;">Ready to connect</span>
+              </div>
+
+              <div style="background: rgba(19, 44, 145, 0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.2rem;">💻</span>
+                  <div>
+                    <div style="font-weight: 600; color: #fff; font-size: 0.95rem;">GitHub</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted);">github.com/bhavyasheth</div>
+                  </div>
+                </div>
+                <span class="mono" style="color: var(--c-cream); font-size: 0.8rem;">Active repos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Affiliation -->
+          <div class="glass-card" style="background: rgba(10, 20, 56, 0.5);">
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--c-cream); margin-bottom: 6px;">LOCATION & INSTITUTION</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+              Department of Computer Science & Engineering<br>
+              Specialization: Artificial Intelligence & Machine Learning<br>
+              Degree: B.Tech (Undergraduate, 1st Year)
             </p>
           </div>
 
@@ -179,40 +176,35 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
       <div class="footer-text">
-        <strong style="color: var(--color-aero-primary);">AERO-FOLIO</strong> — Sub-Space Transmission Console
+        <strong style="color: #fff;">Bhavya Manish Sheth</strong> — Contact & Inquiries
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+          Direct Email: <a href="mailto:shethbhavyam211@gmail.com" style="color: var(--c-teal);">shethbhavyam211@gmail.com</a>
+        </div>
       </div>
       <ul class="footer-links">
-        <li><a href="index.html">Mission Control</a></li>
-        <li><a href="space-tech.html">Space Tech Lab</a></li>
-        <li><a href="exploration-art.html">Creative Art</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="assets/js/starfield.js"></script>
+  <script src="assets/js/ambient.js"></script>
+  <script src="assets/js/main.js"></script>
   <script>
-    // Form submission handling
-    const form = document.getElementById('transmissionForm');
-    const resultBanner = document.getElementById('transmissionResult');
-    if (form && resultBanner) {
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('contactSuccessMsg');
+    if (form && successMsg) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        resultBanner.style.display = 'block';
+        successMsg.style.display = 'block';
         form.reset();
-        resultBanner.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (mobileToggle && navMenu) {
-      mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
+        successMsg.scrollIntoView({ behavior: 'smooth' });
       });
     }
   </script>

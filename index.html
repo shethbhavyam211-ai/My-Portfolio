@@ -3,44 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AERO-FOLIO | 1st Year CSE (AI & ML) Space Tech Explorer</title>
-  <meta name="description" content="Portfolio of a 1st-Year CSE (AI & ML) student exploring Space Tech, Rocket Satellites, Creative Generative Art, and AI enhancements.">
-  
-  <!-- Modern Space Typography -->
+  <title>Bhavya Manish Sheth | 1st Year CSE (AI & ML) Portfolio</title>
+  <meta name="description" content="Portfolio of Bhavya Manish Sheth, a 1st-Year Computer Science and Engineering student specializing in AI & Machine Learning.">
+
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Background Interactive Starfield & Satellite Trajectories -->
-  <canvas id="starfield-canvas"></canvas>
+  <!-- Ambient Dynamic Particle Background with Custom Swatch Palette -->
+  <canvas id="ambient-canvas"></canvas>
 
-  <!-- Navigation Header -->
+  <!-- Site Header & Navigation -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="brand-logo" id="brand-logo-link">
-        <div class="brand-symbol">🛰️</div>
-        <span>AERO<span style="color: #fff;">PORTFOLIO</span></span>
+      <a href="index.html" class="brand-logo" id="brand-logo">
+        <div class="brand-initials">BS</div>
+        <div>
+          <span style="font-weight: 800;">Bhavya</span>
+          <span style="color: var(--c-teal); font-weight: 500;"> Sheth</span>
+        </div>
       </a>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="nav-link active">Mission Control</a></li>
-        <li><a href="space-tech.html" class="nav-link">Space Tech & Satellites</a></li>
-        <li><a href="exploration-art.html" class="nav-link">Creative Art & Tech</a></li>
-        <li><a href="projects.html" class="nav-link">Projects & Labs</a></li>
-        <li><a href="contact.html" class="nav-link">Transmission</a></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="hobbies.html" class="nav-link">Hobbies</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <div class="status-badge">
+      <div class="nav-right-action">
+        <a href="mailto:shethbhavyam211@gmail.com" class="status-badge" style="text-decoration: none;">
           <span class="status-dot"></span>
-          <span>YEAR 1 • CSE (AI & ML)</span>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+          <span>shethbhavyam211@gmail.com</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
       </div>
     </div>
   </header>
@@ -50,89 +52,86 @@
     <div class="container">
       <div class="hero-grid">
         
-        <!-- Left Hero Introduction -->
+        <!-- Left: Introduction -->
         <div class="hero-left">
-          <div class="hero-pill">
-            <span>🚀 DEEP-SPACE TECH & ARTIFICIAL INTELLIGENCE</span>
+          <div class="hero-badge">
+            <span>🎓 1ST YEAR B.TECH • CSE (AI & ML)</span>
           </div>
 
           <h1 class="hero-title">
-            Exploring the Cosmos Through <span class="text-gradient">AI, Rocket Satellites</span> & Creative Tech.
+            Hi, I'm <span class="text-gradient">Bhavya Manish Sheth</span>.
           </h1>
 
           <p class="hero-subtitle">
-            First-year Computer Science Engineering student specializing in <strong>AI & Machine Learning</strong>. Driven by an obsession with orbital mechanics, CubeSats, generative visual art, and aerospace engineering.
+            First-year Computer Science Engineering undergraduate specializing in <strong>Artificial Intelligence & Machine Learning</strong>. Passionate about algorithms, creative problem solving, software design, and emerging tech.
           </p>
 
           <div class="hero-ctas">
-            <a href="space-tech.html" class="btn btn-primary" id="cta-space-lab">
-              <span>🛰️ Explore Space Tech Lab</span>
+            <a href="projects.html" class="btn btn-primary" id="cta-view-projects">
+              <span>Explore My Projects →</span>
             </a>
-            <a href="exploration-art.html" class="btn btn-secondary" id="cta-creative-art">
-              <span>🎨 Generative Art Studio</span>
+            <a href="about.html" class="btn btn-secondary" id="cta-about-me">
+              <span>About My Journey</span>
+            </a>
+            <a href="contact.html" class="btn btn-cream" id="cta-contact">
+              <span>Get In Touch</span>
             </a>
           </div>
 
-          <!-- Hero Real-Time Flight Metrics -->
-          <div class="hero-metrics">
-            <div class="metric-item">
-              <span class="metric-val">1st Year</span>
-              <span class="metric-label">B.Tech CSE (AI & ML)</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-val">#E0F2F4</span>
-              <span class="metric-label">Aero Theme Base</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-val">LEO / 520 km</span>
-              <span class="metric-label">Target Orbit Focus</span>
+          <!-- Quick Profile Card with Avatar -->
+          <div class="hero-quick-profile">
+            <img src="assets/images/bhavya_avatar.jpg" alt="Bhavya Manish Sheth Avatar" class="hero-avatar-img">
+            <div>
+              <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">Bhavya Manish Sheth</div>
+              <div style="font-size: 0.85rem; color: var(--c-mint);">CSE (AI & ML) Undergraduate</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Email: <span class="mono" style="color: var(--c-cream);">shethbhavyam211@gmail.com</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Hero: Frontline Chatbot Terminal -->
+        <!-- Right: Integrated Portfolio AI Chatbot -->
         <div class="hero-chatbot-card" id="heroChatbot">
           <div class="chatbot-header">
             <div class="chatbot-title-group">
               <div class="bot-avatar">🤖</div>
               <div class="bot-info">
-                <h3>AERO-AI Flight Assistant</h3>
+                <h3>Bhavya-AI Assistant</h3>
                 <div class="bot-status">
                   <span class="status-dot"></span>
-                  <span>ONLINE • TELEMETRY LINKED</span>
+                  <span>ONLINE • ASK ME ANYTHING</span>
                 </div>
               </div>
             </div>
             <div class="chatbot-actions">
-              <button id="audioToggleBtn" class="audio-toggle-btn" title="Toggle audio feedback">🔊 Sound: ON</button>
-              <button id="resetChatBtn" class="reset-chat-btn" title="Reset chat">🔄 Reset</button>
+              <button id="audioToggleBtn" class="btn-mini" title="Toggle audio feedback">🔊 Sound: ON</button>
+              <button id="resetChatBtn" class="btn-mini" title="Reset chat">🔄 Reset</button>
             </div>
           </div>
 
-          <!-- Messages Container -->
-          <div class="chatbot-messages" id="chatMessages">
-            <!-- Messages are rendered dynamically by chatbot.js -->
-          </div>
+          <!-- Dynamic Chat Message Stream -->
+          <div class="chatbot-messages" id="chatMessages"></div>
 
-          <!-- Quick Suggestion Chips -->
+          <!-- Suggestion Chips -->
           <div class="chat-quick-chips">
-            <button class="chip" data-prompt="Tell me about your Space Tech & Rocket passion">🚀 Space Tech & Rockets</button>
-            <button class="chip" data-prompt="What satellites and CubeSats do you study?">🛰️ Satellites & Orbit</button>
-            <button class="chip" data-prompt="How do you apply AI & ML in your 1st year?">🧠 AI & ML Focus</button>
-            <button class="chip" data-prompt="Show me your creative art and animations">🎨 Creative Art</button>
-            <button class="chip" data-prompt="How can I connect with you?">📫 Transmission</button>
+            <button class="chip" data-prompt="Who is Bhavya Manish Sheth?">👋 Who is Bhavya?</button>
+            <button class="chip" data-prompt="What are you studying in 1st year CSE (AI & ML)?">🎓 1st Year AI/ML</button>
+            <button class="chip" data-prompt="Show me your top technical projects">🛠️ Key Projects</button>
+            <button class="chip" data-prompt="What are Bhavya's hobbies and creative passions?">🎨 Hobbies</button>
+            <button class="chip" data-prompt="How can I contact Bhavya?">📫 Email Contact</button>
           </div>
 
-          <!-- Input Bar -->
+          <!-- Chat Input -->
           <form class="chatbot-input-row" id="chatForm">
             <input 
               type="text" 
               class="chat-input" 
               id="chatInput" 
-              placeholder="Ask AERO-AI about my space tech passion, AI, or art..." 
+              placeholder="Ask me anything about Bhavya's skills, projects, hobbies..." 
               autocomplete="off"
             />
-            <button type="submit" class="chat-send-btn" id="chatSendBtn" aria-label="Send">
+            <button type="submit" class="chat-send-btn" id="chatSendBtn">
               <span>Send ↵</span>
             </button>
           </form>
@@ -142,214 +141,204 @@
     </div>
   </section>
 
-  <!-- Exploration & Creative Art Showcase Section -->
-  <section class="exploration-section">
+  <!-- Core Competencies & Academic Pillars -->
+  <section style="background: rgba(14, 25, 69, 0.45); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Visual & Technical Exploration</span>
-        <h2 class="section-title">Where Engineering Meets Creative Vision</h2>
+        <span class="section-tag">Core Technical Focus</span>
+        <h2 class="section-title">Foundations of My Engineering Journey</h2>
         <p class="section-desc">
-          Representing my exploration journey through cinematic space tech artwork, generative AI fractals, and high-performance animations.
-        </p>
-      </div>
-
-      <!-- Feature Visual Banners -->
-      <div class="exploration-banner-grid">
-        
-        <!-- Large Card: Main Exploration Concept Art -->
-        <div class="exploration-card-large">
-          <img src="assets/images/hero_exploration.jpg" alt="Student explorer observing rocket launch and neural network telemetry">
-          <div class="exploration-overlay"></div>
-          <div class="card-content-over">
-            <span class="card-badge">THE EXPLORATION VISION</span>
-            <h3 style="font-size: 1.8rem; margin-bottom: 8px;">Cosmic Observation & Neural Computing</h3>
-            <p style="color: var(--text-muted); max-width: 540px; margin-bottom: 16px;">
-              Combining advanced artificial intelligence with orbital launch systems to expand human reach beyond terrestrial boundaries.
-            </p>
-            <a href="exploration-art.html" class="btn btn-secondary">
-              <span>Enter Art & Animation Gallery →</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Stack: Rocket Satellites & Neural Fractals -->
-        <div class="exploration-subgrid">
-          
-          <div class="exploration-card-small">
-            <img src="assets/images/satellite_cubesat.jpg" alt="CubeSat satellite in Low Earth Orbit">
-            <div class="exploration-overlay"></div>
-            <div class="card-content-over">
-              <span class="card-badge">PROPULSION & SATELLITES</span>
-              <h4 style="font-size: 1.25rem;">Autonomous CubeSats</h4>
-              <p style="color: var(--text-muted); font-size: 0.88rem;">6U miniaturized orbital science modules with deployable solar arrays.</p>
-              <a href="space-tech.html" style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; display: inline-block;">Test Orbit Sim →</a>
-            </div>
-          </div>
-
-          <div class="exploration-card-small">
-            <img src="assets/images/neural_cosmic_art.jpg" alt="Generative neural cosmic art with rocket trajectories">
-            <div class="exploration-overlay"></div>
-            <div class="card-content-over">
-              <span class="card-badge">GENERATIVE ENHANCEMENTS</span>
-              <h4 style="font-size: 1.25rem;">Algorithmic Trajectories</h4>
-              <p style="color: var(--text-muted); font-size: 0.88rem;">Mathematical fractals and interactive canvas particle networks.</p>
-              <a href="exploration-art.html" style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; display: inline-block;">Launch Canvas →</a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Space Tech & Rocket Satellites Core Pillars -->
-  <section class="space-pillars-section" style="background: rgba(10, 17, 34, 0.45); border-top: 1px solid var(--color-aero-border); border-bottom: 1px solid var(--color-aero-border);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Core Technical Pillars</span>
-        <h2 class="section-title">Space Tech, Rocketry & Satellite Systems</h2>
-        <p class="section-desc">
-          Building the theoretical, computational, and algorithmic bedrock during my 1st year of college.
+          Building a rigorous academic and hands-on foundation during my first year in Computer Science & Artificial Intelligence.
         </p>
       </div>
 
       <div class="cards-grid">
         
-        <!-- Card 1: Small Satellites -->
-        <div class="glass-card">
-          <div class="card-icon">🛰️</div>
-          <h3 class="card-title">CubeSat Architecture</h3>
-          <p class="card-desc">
-            Deeply passionate about small satellites, modular bus designs (1U to 12U), passive magnetic stabilization, and edge-AI payload processing in orbit.
-          </p>
-          <div class="tag-list">
-            <span class="tech-tag">CubeSats</span>
-            <span class="tech-tag">Orbital Mechanics</span>
-            <span class="tech-tag">Downlink Radios</span>
-          </div>
-        </div>
-
-        <!-- Card 2: Rocket Propulsion -->
-        <div class="glass-card">
-          <div class="card-icon">🚀</div>
-          <h3 class="card-title">Rocket Propulsion & Dynamics</h3>
-          <p class="card-desc">
-            Studying staging equations, specific impulse (Isp), thrust-to-weight ratios, and trajectory optimization algorithms in Python.
-          </p>
-          <div class="tag-list">
-            <span class="tech-tag">Tsiolkovsky Eq.</span>
-            <span class="tech-tag">Delta-V Budgets</span>
-            <span class="tech-tag">Simulations</span>
-          </div>
-        </div>
-
-        <!-- Card 3: AI in Aerospace -->
+        <!-- Pillar 1 -->
         <div class="glass-card">
           <div class="card-icon">🧠</div>
-          <h3 class="card-title">AI for Earth Observation</h3>
-          <p class="card-desc">
-            Applying Computer Vision and Convolutional Neural Networks on multispectral satellite imagery for autonomous cloud masking and environmental monitoring.
+          <span class="card-badge">SPECIALIZATION</span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Artificial Intelligence & ML</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            Studying statistical learning, regression and classification models, Python data processing (NumPy, Pandas), and linear algebra fundamentals for modern neural networks.
           </p>
           <div class="tag-list">
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">Remote Sensing</span>
-            <span class="tech-tag">CNNs</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-Learn</span>
+            <span class="tech-tag">Linear Algebra</span>
           </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-card">
+          <div class="card-icon">💻</div>
+          <span class="card-badge">FOUNDATION</span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Computer Science Core</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            Developing strong procedural and object-oriented programming discipline in C and Python, with a focus on algorithmic complexity, data structures, and clean code principles.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">C Programming</span>
+            <span class="tech-tag">Data Structures</span>
+            <span class="tech-tag">Discrete Math</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-card">
+          <div class="card-icon">⚡</div>
+          <span class="card-badge">APPLIED DEV</span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Software & Creative Tech</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            Crafting responsive web tools, interactive canvas simulations, and lightweight user-focused applications with standard HTML5, modern CSS3, and JavaScript.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">HTML5 / CSS3</span>
+            <span class="tech-tag">Canvas 2D</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Preview -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Builds</span>
+        <h2 class="section-title">Selected Student Projects</h2>
+        <p class="section-desc">Hands-on applications and algorithmic models built during my 1st year.</p>
+      </div>
+
+      <div class="cards-grid">
+        
+        <!-- Project 1 -->
+        <div class="glass-card">
+          <span class="card-badge">MACHINE LEARNING</span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Academic Performance Predictor</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            Python ML regression model evaluating study habits, attendance ratios, and test scores to predict student academic outcomes.
+          </p>
+          <div class="tag-list" style="margin-bottom: 18px;">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-Learn</span>
+            <span class="tech-tag">Pandas</span>
+          </div>
+          <button class="btn btn-secondary btn-open-modal" data-project="grade-predictor" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card">
+          <span class="card-badge">ALGORITHMS</span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Sorting & Pathfinding Visualizer</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            Interactive web tool that visualizes sorting algorithms (Merge Sort, Quick Sort) and step-by-step memory swaps in real-time.
+          </p>
+          <div class="tag-list" style="margin-bottom: 18px;">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Canvas</span>
+            <span class="tech-tag">Algorithms</span>
+          </div>
+          <button class="btn btn-secondary btn-open-modal" data-project="algo-visualizer" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card">
+          <span class="card-badge">WEB PRODUCTIVITY</span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Smart Task & Study Habit Tracker</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">
+            Productivity app for college students with local persistence, study timer intervals, and deadline urgency indicators.
+          </p>
+          <div class="tag-list" style="margin-bottom: 18px;">
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">LocalStorage</span>
+            <span class="tech-tag">UI/UX</span>
+          </div>
+          <button class="btn btn-secondary btn-open-modal" data-project="task-tracker" style="width: 100%;">
+            <span>Inspect Project Details ↗</span>
+          </button>
         </div>
 
       </div>
 
       <div style="text-align: center; margin-top: 40px;">
-        <a href="space-tech.html" class="btn btn-primary">
-          <span>Launch Interactive Satellite Simulation →</span>
+        <a href="projects.html" class="btn btn-primary">
+          <span>View All Projects & Labs →</span>
         </a>
       </div>
-
     </div>
   </section>
 
-  <!-- First Year CSE Academic Roadmap -->
-  <section class="timeline-section">
+  <!-- Connect Callout Banner -->
+  <section style="padding: 40px 0;">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Flight Log & Academic Milestones</span>
-        <h2 class="section-title">1st-Year CSE (AI & ML) Trajectory</h2>
-        <p class="section-desc">
-          A living timeline of my college journey, coursework mastery, and technical enhancements.
+      <div style="background: linear-gradient(135deg, rgba(19, 44, 145, 0.4), rgba(41, 112, 219, 0.25)); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 40px; text-align: center; box-shadow: var(--shadow-card);">
+        <h2 style="font-size: 2rem; margin-bottom: 12px;">Let's Connect & Collaborate!</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 24px auto; font-size: 1.05rem;">
+          I am always open to discussing academic projects, hackathons, open-source ideas, or learning opportunities.
         </p>
-      </div>
-
-      <div class="timeline">
-        
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">SEMESTER 1 • FOUNDATIONAL ASCENT</div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">C / Python Systems & Mathematical Rigor</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-              Mastering structured programming, discrete mathematics, linear algebra, vector calculus, and basic digital logic circuits essential for aerospace telemetry.
-            </p>
-          </div>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="mailto:shethbhavyam211@gmail.com" class="btn btn-cream">
+            <span>✉️ shethbhavyam211@gmail.com</span>
+          </a>
+          <button class="btn btn-secondary btn-copy-email">
+            <span>📋 Copy Email Address</span>
+          </button>
+          <a href="contact.html" class="btn btn-primary">
+            <span>Transmission Form →</span>
+          </a>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">SEMESTER 2 • ORBITAL INCLINATION</div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Data Structures, Neural Net Fundamentals & CubeSat Club</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-              Deep-diving into advanced algorithms, introductory machine learning architectures, and joining university satellite & rocketry technical societies.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">UPCOMING HORIZON • MISSION ROADMAP</div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Student Satellite Payload Launch & AI Research Paper</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-              Targeting student satellite high-altitude balloon telemetry tests, collegiate hackathon victories, and publishing open-source aerospace AI tooling.
-            </p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Self-Contained Project Detail Modal -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <span class="card-badge" id="modalBadge">PROJECT</span>
+      <h3 style="font-size: 1.5rem; margin-bottom: 12px;" id="modalTitle">Project Title</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;" id="modalDescription">Description</p>
+      
+      <div style="margin-bottom: 20px;">
+        <h4 style="font-size: 0.95rem; color: var(--c-cream); margin-bottom: 8px;">Key Implementation Highlights:</h4>
+        <ul id="modalHighlights" style="padding-left: 20px; font-size: 0.9rem;"></ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; color: var(--c-mint); margin-bottom: 8px;">Technologies Applied:</h4>
+        <div class="tag-list" id="modalTechStack"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
       <div class="footer-text">
-        <strong style="color: var(--color-aero-primary);">AERO-FOLIO</strong> — 1st Year CSE (AI & ML) | Space Tech & Rocket Satellite Explorer
-        <div style="font-size: 0.8rem; margin-top: 4px; color: var(--text-dim);">
-          Crafted with Ice Aero Cyan (#E0F2F4) & Cosmic Obsidian. Ready for continuous evolution.
+        <strong style="color: #fff;">Bhavya Manish Sheth</strong> — 1st Year B.Tech CSE (AI & ML)
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+          Direct Contact: <a href="mailto:shethbhavyam211@gmail.com" style="color: var(--c-teal);">shethbhavyam211@gmail.com</a>
         </div>
       </div>
       <ul class="footer-links">
-        <li><a href="space-tech.html">Space Tech Lab</a></li>
-        <li><a href="exploration-art.html">Creative Art</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Transmission</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/starfield.js"></script>
+  <script src="assets/js/ambient.js"></script>
   <script src="assets/js/chatbot.js"></script>
-  <script>
-    // Mobile navigation toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (mobileToggle && navMenu) {
-      mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-      });
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

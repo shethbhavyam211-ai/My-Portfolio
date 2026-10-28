@@ -1,10 +1,11 @@
 /* ==========================================================================
-   ASTRO-AI / NOVA PORTFOLIO CHATBOT
-   Intelligent flight-assistant and portfolio guide for 1st Year CSE (AI & ML)
-   Specialized in Space Tech, Rocket Satellites, AI Explorations & Creative Art.
+   BHAVYA'S PORTFOLIO AI ASSISTANT
+   Conversational Assistant for Bhavya Manish Sheth
+   1st Year B.Tech CSE (AI & ML) Student
+   Email: shethbhavyam211@gmail.com
    ========================================================================== */
 
-(function initChatbot() {
+(function initBhavyaChatbot() {
   const messagesContainer = document.getElementById('chatMessages');
   const chatInput = document.getElementById('chatInput');
   const chatForm = document.getElementById('chatForm');
@@ -14,11 +15,10 @@
 
   if (!messagesContainer || !chatInput || !chatForm) return;
 
-  // Audio Telemetry Feedback via Web Audio API
   let audioEnabled = true;
   let audioCtx = null;
 
-  function playTelemetrySound(type = 'blip') {
+  function playTone(freq = 840, type = 'sine', duration = 0.08) {
     if (!audioEnabled) return;
     try {
       if (!audioCtx) {
@@ -27,33 +27,20 @@
       if (audioCtx.state === 'suspended') {
         audioCtx.resume();
       }
-
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
       osc.connect(gain);
       gain.connect(audioCtx.destination);
 
       const now = audioCtx.currentTime;
-
-      if (type === 'blip') {
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(880, now);
-        osc.frequency.exponentialRampToValueAtTime(1320, now + 0.08);
-        gain.gain.setValueAtTime(0.06, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
-        osc.start(now);
-        osc.stop(now + 0.08);
-      } else if (type === 'incoming') {
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(540, now);
-        osc.frequency.exponentialRampToValueAtTime(1080, now + 0.12);
-        gain.gain.setValueAtTime(0.07, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
-        osc.start(now);
-        osc.stop(now + 0.12);
-      }
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, now);
+      gain.gain.setValueAtTime(0.05, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+      osc.start(now);
+      osc.stop(now + duration);
     } catch (e) {
-      console.warn('Audio feedback error:', e);
+      console.warn('Audio tone error:', e);
     }
   }
 
@@ -61,71 +48,72 @@
     audioToggleBtn.addEventListener('click', () => {
       audioEnabled = !audioEnabled;
       audioToggleBtn.textContent = audioEnabled ? '🔊 Sound: ON' : '🔇 Sound: OFF';
-      audioToggleBtn.title = audioEnabled ? 'Disable telemetry sounds' : 'Enable telemetry sounds';
     });
   }
 
-  // Knowledge base for answering user queries
   const knowledgeBase = [
     {
-      keywords: ['hi', 'hello', 'hey', 'start', 'greetings', 'who are you', 'intro'],
-      reply: `👋 Welcome to my Mission Control! I am **AERO-AI**, the interactive portfolio flight assistant. Here you can explore my journey as a **1st-Year CSE (AI & ML) student**, my intense passion for **Space Tech & Rocket Satellites**, and my **creative algorithmic art** experiments. How can I assist your exploration today?`
+      keywords: ['hi', 'hello', 'hey', 'start', 'greetings', 'who are you', 'bhavya', 'intro'],
+      reply: `👋 Hello! I am **Bhavya's AI Assistant**. Welcome to the portfolio of **Bhavya Manish Sheth**, a dedicated 1st-year **CSE (Artificial Intelligence & Machine Learning)** undergraduate student! You can ask me about Bhavya's academic journey, technical projects, creative hobbies, or how to get in touch at **shethbhavyam211@gmail.com**.`
     },
     {
-      keywords: ['space', 'rocket', 'satellites', 'cubesat', 'orbit', 'propulsion', 'launch'],
-      reply: `🚀 **Space Tech & Rocket Satellites:** My deepest technical passion lies at the intersection of aerospace systems and artificial intelligence. I'm actively researching **CubeSat avionics, orbital mechanics simulation**, and **small-satellite constellation telemetry**. Check out the **[Space Tech & Satellites Lab](space-tech.html)** page to test the real-time orbit simulator!`
+      keywords: ['about', 'education', 'college', '1st year', 'first year', 'degree', 'cse', 'ai & ml'],
+      reply: `🎓 **About Bhavya Manish Sheth:**
+• Currently pursuing **B.Tech in Computer Science & Engineering (AI & ML)** — 1st Year.
+• Focused on mastering computer science fundamentals: C, Python, Data Structures, Discrete Mathematics, and Linear Algebra for Machine Learning.
+• Check out the **[About Page](about.html)** to read his full background and academic milestones!`
     },
     {
-      keywords: ['ai', 'ml', 'machine learning', 'deep learning', 'neural', 'python', 'cse'],
-      reply: `🧠 **AI & ML Focus:** As a 1st-year Computer Science Engineering student specializing in AI & Machine Learning, I focus on:
-• Neural Networks for Satellite Imagery & Remote Sensing
-• Python, NumPy, PyTorch fundamentals, and Linear Algebra
-• Edge AI for low-power spaceflight microcontrollers
-• Algorithmic problem solving and data structures.`
+      keywords: ['projects', 'code', 'work', 'build', 'github', 'model'],
+      reply: `🛠️ **Bhavya's Highlighted Projects:**
+1. **Academic Performance Predictor:** ML regression model analyzing student study habits to predict grades.
+2. **Interactive Algorithm Visualizer:** Dynamic visual engine for sorting and pathfinding algorithms.
+3. **Smart Task & Habit Tracker:** Clean web productivity application with local persistence.
+4. **Portfolio AI Agent:** This conversational frontend assistant with Web Audio synthesis!
+Explore all demos on the **[Projects Page](projects.html)**!`
     },
     {
-      keywords: ['art', 'creative', 'animation', 'enhancement', 'generative', 'design'],
-      reply: `🎨 **Creative Art & Animations:** I view engineering as an art form! I love creating generative celestial art, interactive canvas shaders, particle cosmos systems, and UI telemetry enhancements. Head over to the **[Creative Art & Exploration](exploration-art.html)** page to experiment with the live generative canvas!`
+      keywords: ['skills', 'tech', 'stack', 'languages', 'python', 'tools'],
+      reply: `💻 **Core Technical Toolkit:**
+• **Languages:** Python, C, JavaScript, HTML5, CSS3
+• **AI & ML Foundations:** NumPy, Pandas, Scikit-Learn basics, Linear Algebra & Calculus
+• **Developer Tools:** Git, VS Code, Linux terminal, Canva / UI prototyping.`
     },
     {
-      keywords: ['projects', 'work', 'code', 'github', 'portfolio'],
-      reply: `🛠️ **Highlighted First-Year Projects:**
-1. **CubeSat Orbital Telemetry Engine** - Web-based orbit calculation & altitude physics.
-2. **AeroSpace Vision CNN** - Initial prototype for satellite cloud & terrain segmentation.
-3. **Generative Neural Constellation** - Algorithmic particle art synchronized to mathematical fractals.
-Visit the **[Projects](projects.html)** tab to inspect all builds & repositories!`
+      keywords: ['hobbies', 'interests', 'free time', 'art', 'astronomy', 'creative'],
+      reply: `🎨 **Bhavya's Hobbies & Interests:**
+• **Creative Coding:** Algorithmic visual generators and generative canvas art.
+• **Astronomy & Space Exploration:** Avid fan of deep-space science, cosmology, and rocketry missions.
+• **Strategic Gaming & Chess:** Enjoys logic puzzles, chess, and tactical problem-solving.
+• **Tech & Sci-Fi Reading:** Keeping up with breakthroughs in artificial intelligence and future technology.
+Visit the **[Hobbies Page](hobbies.html)** to see an interactive generative visualizer!`
     },
     {
-      keywords: ['first year', 'college', 'semester', 'education', 'background', 'year 1', 'student'],
-      reply: `🎓 **Academic Journey:** Currently in my 1st Year of **B.Tech in Computer Science & Engineering (Artificial Intelligence & Machine Learning)**. Building rock-solid foundations in calculus, data structures, discrete mathematics, and aerospace telemetry computing.`
-    },
-    {
-      keywords: ['contact', 'email', 'social', 'linkedin', 'github', 'hire', 'collaborate'],
-      reply: `📫 **Connect & Transmission:** I'd love to collaborate on space tech clubs, hackathons, open-source AI projects, or student satellite teams! Hop to the **[Transmission Page](contact.html)** or drop a direct frequency ping!`
+      keywords: ['contact', 'email', 'reach', 'message', 'hire', 'collaborate'],
+      reply: `📫 **Get in Touch with Bhavya:**
+• **Direct Email:** [shethbhavyam211@gmail.com](mailto:shethbhavyam211@gmail.com)
+• You can also send a message directly through the **[Contact Page](contact.html)**!`
     }
   ];
 
   function getBotResponse(userText) {
     const text = userText.toLowerCase().trim();
-
     for (const item of knowledgeBase) {
       if (item.keywords.some((kw) => text.includes(kw))) {
         return item.reply;
       }
     }
-
-    return `🛰️ *Telemetry packet received:* "${userText}". While my 1st-year CSE flight logs are constantly growing, you can ask me about **Space Tech**, **Rocket Satellites**, **AI & ML coursework**, or **Creative Art animations**! Or use the quick chips below.`;
+    return `💡 Thanks for asking! I'm Bhavya's portfolio assistant. You can ask me about Bhavya's **education**, **1st-year AI/ML projects**, **skills**, **hobbies**, or reach out to him directly at **shethbhavyam211@gmail.com**.`;
   }
 
   function appendMessage(text, sender = 'bot') {
     const bubble = document.createElement('div');
     bubble.classList.add('chat-bubble', sender);
 
-    // Parse simple markdown links and bold formatting
     let formatted = text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="text-decoration: underline; color: #E0F2F4; font-weight:600;">$1</a>')
+      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="text-decoration: underline; color: #81e9e6; font-weight:600;">$1</a>')
       .replace(/\n/g, '<br>');
 
     bubble.innerHTML = formatted;
@@ -133,27 +121,27 @@ Visit the **[Projects](projects.html)** tab to inspect all builds & repositories
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
     if (sender === 'bot') {
-      playTelemetrySound('incoming');
+      playTone(660, 'sine', 0.1);
     }
   }
 
   function showBotTyping(callback) {
     const typingBubble = document.createElement('div');
     typingBubble.classList.add('chat-bubble', 'bot');
-    typingBubble.innerHTML = `<span style="opacity: 0.7; font-family: var(--font-mono); font-size: 0.8rem;">🛰️ AERO-AI computing telemetry...</span>`;
+    typingBubble.innerHTML = `<span style="opacity: 0.7; font-family: var(--font-mono); font-size: 0.8rem;">⚡ Bhavya-AI is thinking...</span>`;
     messagesContainer.appendChild(typingBubble);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
     setTimeout(() => {
       typingBubble.remove();
       callback();
-    }, 550);
+    }, 450);
   }
 
   function handleUserMessage(message) {
     if (!message) return;
     appendMessage(message, 'user');
-    playTelemetrySound('blip');
+    playTone(880, 'sine', 0.05);
 
     showBotTyping(() => {
       const reply = getBotResponse(message);
@@ -161,7 +149,6 @@ Visit the **[Projects](projects.html)** tab to inspect all builds & repositories
     });
   }
 
-  // Form submission
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const val = chatInput.value.trim();
@@ -170,7 +157,6 @@ Visit the **[Projects](projects.html)** tab to inspect all builds & repositories
     handleUserMessage(val);
   });
 
-  // Quick Chips
   quickChips.forEach((chip) => {
     chip.addEventListener('click', () => {
       const prompt = chip.getAttribute('data-prompt') || chip.textContent;
@@ -178,21 +164,19 @@ Visit the **[Projects](projects.html)** tab to inspect all builds & repositories
     });
   });
 
-  // Reset chat
   if (resetChatBtn) {
     resetChatBtn.addEventListener('click', () => {
       messagesContainer.innerHTML = '';
       appendMessage(
-        `🛰️ **Terminal Reset:** Flight Assistant re-initialized. Ready to explore Space Tech, AI & ML projects, or creative visuals. Ask me anything!`,
+        `👋 **Assistant Reset:** Hi! How can I help you learn more about **Bhavya Manish Sheth**?`,
         'bot'
       );
     });
   }
 
-  // Initial greeting if container is empty
   if (messagesContainer.children.length === 0) {
     appendMessage(
-      `🛰️ **AERO-AI Flight Deck Initialized:** Welcome! I am your interactive guide into a 1st-Year CSE (AI & ML) portfolio driven by **deep-space exploration, rocket satellites, and creative tech**. Select a mission chip below or ask any question!`,
+      `👋 **Welcome!** I am the AI assistant for **Bhavya Manish Sheth** — 1st-Year CSE (AI & ML) student. Feel free to click any suggestion below or ask me about Bhavya's background, projects, or hobbies!`,
       'bot'
     );
   }
