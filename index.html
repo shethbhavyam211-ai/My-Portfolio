@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AERO-FOLIO | 1st Year CSE (AI & ML) Space Tech Explorer</title>
+  <meta name="description" content="Portfolio of a 1st-Year CSE (AI & ML) student exploring Space Tech, Rocket Satellites, Creative Generative Art, and AI enhancements.">
+  
+  <!-- Modern Space Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Interactive Starfield & Satellite Trajectories -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="brand-logo-link">
+        <div class="brand-symbol">🛰️</div>
+        <span>AERO<span style="color: #fff;">PORTFOLIO</span></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Mission Control</a></li>
+        <li><a href="space-tech.html" class="nav-link">Space Tech & Satellites</a></li>
+        <li><a href="exploration-art.html" class="nav-link">Creative Art & Tech</a></li>
+        <li><a href="projects.html" class="nav-link">Projects & Labs</a></li>
+        <li><a href="contact.html" class="nav-link">Transmission</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>YEAR 1 • CSE (AI & ML)</span>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Immediate Frontline Chatbot -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left Hero Introduction -->
+        <div class="hero-left">
+          <div class="hero-pill">
+            <span>🚀 DEEP-SPACE TECH & ARTIFICIAL INTELLIGENCE</span>
+          </div>
+
+          <h1 class="hero-title">
+            Exploring the Cosmos Through <span class="text-gradient">AI, Rocket Satellites</span> & Creative Tech.
+          </h1>
+
+          <p class="hero-subtitle">
+            First-year Computer Science Engineering student specializing in <strong>AI & Machine Learning</strong>. Driven by an obsession with orbital mechanics, CubeSats, generative visual art, and aerospace engineering.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="space-tech.html" class="btn btn-primary" id="cta-space-lab">
+              <span>🛰️ Explore Space Tech Lab</span>
+            </a>
+            <a href="exploration-art.html" class="btn btn-secondary" id="cta-creative-art">
+              <span>🎨 Generative Art Studio</span>
+            </a>
+          </div>
+
+          <!-- Hero Real-Time Flight Metrics -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-val">1st Year</span>
+              <span class="metric-label">B.Tech CSE (AI & ML)</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val">#E0F2F4</span>
+              <span class="metric-label">Aero Theme Base</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val">LEO / 520 km</span>
+              <span class="metric-label">Target Orbit Focus</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero: Frontline Chatbot Terminal -->
+        <div class="hero-chatbot-card" id="heroChatbot">
+          <div class="chatbot-header">
+            <div class="chatbot-title-group">
+              <div class="bot-avatar">🤖</div>
+              <div class="bot-info">
+                <h3>AERO-AI Flight Assistant</h3>
+                <div class="bot-status">
+                  <span class="status-dot"></span>
+                  <span>ONLINE • TELEMETRY LINKED</span>
+                </div>
+              </div>
+            </div>
+            <div class="chatbot-actions">
+              <button id="audioToggleBtn" class="audio-toggle-btn" title="Toggle audio feedback">🔊 Sound: ON</button>
+              <button id="resetChatBtn" class="reset-chat-btn" title="Reset chat">🔄 Reset</button>
+            </div>
+          </div>
+
+          <!-- Messages Container -->
+          <div class="chatbot-messages" id="chatMessages">
+            <!-- Messages are rendered dynamically by chatbot.js -->
+          </div>
+
+          <!-- Quick Suggestion Chips -->
+          <div class="chat-quick-chips">
+            <button class="chip" data-prompt="Tell me about your Space Tech & Rocket passion">🚀 Space Tech & Rockets</button>
+            <button class="chip" data-prompt="What satellites and CubeSats do you study?">🛰️ Satellites & Orbit</button>
+            <button class="chip" data-prompt="How do you apply AI & ML in your 1st year?">🧠 AI & ML Focus</button>
+            <button class="chip" data-prompt="Show me your creative art and animations">🎨 Creative Art</button>
+            <button class="chip" data-prompt="How can I connect with you?">📫 Transmission</button>
+          </div>
+
+          <!-- Input Bar -->
+          <form class="chatbot-input-row" id="chatForm">
+            <input 
+              type="text" 
+              class="chat-input" 
+              id="chatInput" 
+              placeholder="Ask AERO-AI about my space tech passion, AI, or art..." 
+              autocomplete="off"
+            />
+            <button type="submit" class="chat-send-btn" id="chatSendBtn" aria-label="Send">
+              <span>Send ↵</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Exploration & Creative Art Showcase Section -->
+  <section class="exploration-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Visual & Technical Exploration</span>
+        <h2 class="section-title">Where Engineering Meets Creative Vision</h2>
+        <p class="section-desc">
+          Representing my exploration journey through cinematic space tech artwork, generative AI fractals, and high-performance animations.
+        </p>
+      </div>
+
+      <!-- Feature Visual Banners -->
+      <div class="exploration-banner-grid">
+        
+        <!-- Large Card: Main Exploration Concept Art -->
+        <div class="exploration-card-large">
+          <img src="assets/images/hero_exploration.jpg" alt="Student explorer observing rocket launch and neural network telemetry">
+          <div class="exploration-overlay"></div>
+          <div class="card-content-over">
+            <span class="card-badge">THE EXPLORATION VISION</span>
+            <h3 style="font-size: 1.8rem; margin-bottom: 8px;">Cosmic Observation & Neural Computing</h3>
+            <p style="color: var(--text-muted); max-width: 540px; margin-bottom: 16px;">
+              Combining advanced artificial intelligence with orbital launch systems to expand human reach beyond terrestrial boundaries.
+            </p>
+            <a href="exploration-art.html" class="btn btn-secondary">
+              <span>Enter Art & Animation Gallery →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Stack: Rocket Satellites & Neural Fractals -->
+        <div class="exploration-subgrid">
+          
+          <div class="exploration-card-small">
+            <img src="assets/images/satellite_cubesat.jpg" alt="CubeSat satellite in Low Earth Orbit">
+            <div class="exploration-overlay"></div>
+            <div class="card-content-over">
+              <span class="card-badge">PROPULSION & SATELLITES</span>
+              <h4 style="font-size: 1.25rem;">Autonomous CubeSats</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">6U miniaturized orbital science modules with deployable solar arrays.</p>
+              <a href="space-tech.html" style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; display: inline-block;">Test Orbit Sim →</a>
+            </div>
+          </div>
+
+          <div class="exploration-card-small">
+            <img src="assets/images/neural_cosmic_art.jpg" alt="Generative neural cosmic art with rocket trajectories">
+            <div class="exploration-overlay"></div>
+            <div class="card-content-over">
+              <span class="card-badge">GENERATIVE ENHANCEMENTS</span>
+              <h4 style="font-size: 1.25rem;">Algorithmic Trajectories</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">Mathematical fractals and interactive canvas particle networks.</p>
+              <a href="exploration-art.html" style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; display: inline-block;">Launch Canvas →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Space Tech & Rocket Satellites Core Pillars -->
+  <section class="space-pillars-section" style="background: rgba(10, 17, 34, 0.45); border-top: 1px solid var(--color-aero-border); border-bottom: 1px solid var(--color-aero-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Technical Pillars</span>
+        <h2 class="section-title">Space Tech, Rocketry & Satellite Systems</h2>
+        <p class="section-desc">
+          Building the theoretical, computational, and algorithmic bedrock during my 1st year of college.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        
+        <!-- Card 1: Small Satellites -->
+        <div class="glass-card">
+          <div class="card-icon">🛰️</div>
+          <h3 class="card-title">CubeSat Architecture</h3>
+          <p class="card-desc">
+            Deeply passionate about small satellites, modular bus designs (1U to 12U), passive magnetic stabilization, and edge-AI payload processing in orbit.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">CubeSats</span>
+            <span class="tech-tag">Orbital Mechanics</span>
+            <span class="tech-tag">Downlink Radios</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Rocket Propulsion -->
+        <div class="glass-card">
+          <div class="card-icon">🚀</div>
+          <h3 class="card-title">Rocket Propulsion & Dynamics</h3>
+          <p class="card-desc">
+            Studying staging equations, specific impulse (Isp), thrust-to-weight ratios, and trajectory optimization algorithms in Python.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">Tsiolkovsky Eq.</span>
+            <span class="tech-tag">Delta-V Budgets</span>
+            <span class="tech-tag">Simulations</span>
+          </div>
+        </div>
+
+        <!-- Card 3: AI in Aerospace -->
+        <div class="glass-card">
+          <div class="card-icon">🧠</div>
+          <h3 class="card-title">AI for Earth Observation</h3>
+          <p class="card-desc">
+            Applying Computer Vision and Convolutional Neural Networks on multispectral satellite imagery for autonomous cloud masking and environmental monitoring.
+          </p>
+          <div class="tag-list">
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">Remote Sensing</span>
+            <span class="tech-tag">CNNs</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="space-tech.html" class="btn btn-primary">
+          <span>Launch Interactive Satellite Simulation →</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- First Year CSE Academic Roadmap -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Flight Log & Academic Milestones</span>
+        <h2 class="section-title">1st-Year CSE (AI & ML) Trajectory</h2>
+        <p class="section-desc">
+          A living timeline of my college journey, coursework mastery, and technical enhancements.
+        </p>
+      </div>
+
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">SEMESTER 1 • FOUNDATIONAL ASCENT</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">C / Python Systems & Mathematical Rigor</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Mastering structured programming, discrete mathematics, linear algebra, vector calculus, and basic digital logic circuits essential for aerospace telemetry.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">SEMESTER 2 • ORBITAL INCLINATION</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Data Structures, Neural Net Fundamentals & CubeSat Club</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Deep-diving into advanced algorithms, introductory machine learning architectures, and joining university satellite & rocketry technical societies.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">UPCOMING HORIZON • MISSION ROADMAP</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Student Satellite Payload Launch & AI Research Paper</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Targeting student satellite high-altitude balloon telemetry tests, collegiate hackathon victories, and publishing open-source aerospace AI tooling.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        <strong style="color: var(--color-aero-primary);">AERO-FOLIO</strong> — 1st Year CSE (AI & ML) | Space Tech & Rocket Satellite Explorer
+        <div style="font-size: 0.8rem; margin-top: 4px; color: var(--text-dim);">
+          Crafted with Ice Aero Cyan (#E0F2F4) & Cosmic Obsidian. Ready for continuous evolution.
+        </div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="space-tech.html">Space Tech Lab</a></li>
+        <li><a href="exploration-art.html">Creative Art</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Transmission</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/starfield.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+  <script>
+    // Mobile navigation toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Art, Animations & Tech Enhancement | AERO-FOLIO</title>
+  <meta name="description" content="Explore creative generative art, high-performance canvas animations, and technical enhancements blending AI with space aesthetics.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Starfield Canvas -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-symbol">🛰️</div>
+        <span>AERO<span style="color: #fff;">PORTFOLIO</span></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Mission Control</a></li>
+        <li><a href="space-tech.html" class="nav-link">Space Tech & Satellites</a></li>
+        <li><a href="exploration-art.html" class="nav-link active">Creative Art & Tech</a></li>
+        <li><a href="projects.html" class="nav-link">Projects & Labs</a></li>
+        <li><a href="contact.html" class="nav-link">Transmission</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>CREATIVE ENGINE • ACTIVE</span>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section style="padding: 50px 0 30px 0;">
+    <div class="container">
+      <span class="section-tag">EXPLORATION & CREATIVE COMPUTING</span>
+      <h1 style="font-size: clamp(2.4rem, 4vw, 3.6rem); margin-bottom: 16px;">
+        Creative Art, <span class="text-gradient">Animations & Tech</span> Enhancement
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 780px;">
+        Engineering is heightened when fused with artistic expression. Here, I create generative neural fractals, physics-based canvas animations, and sleek telemetry interfaces styled in ice-aero cyan (#E0F2F4).
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Generative Canvas Studio -->
+  <section style="padding-top: 10px;">
+    <div class="container">
+      
+      <div class="art-lab-grid">
+        
+        <!-- Canvas wrapper -->
+        <div class="art-canvas-wrapper">
+          <canvas id="generativeCanvas"></canvas>
+          <div style="position: absolute; top: 14px; left: 14px; background: rgba(6, 9, 19, 0.75); border: 1px solid var(--color-aero-border); padding: 6px 12px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-aero-primary);">
+            MODE: <span id="patternLabel" style="color: var(--color-neon-cyan); font-weight: bold;">Neural Constellation</span>
+          </div>
+
+          <div class="art-controls">
+            <button id="btnChangePattern" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem;">
+              ⚡ Cycle Algorithm
+            </button>
+            <button id="btnSnapshot" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8rem;">
+              📸 Capture Artwork
+            </button>
+          </div>
+        </div>
+
+        <!-- Controls explanation & philosophy -->
+        <div>
+          <span class="card-badge">INTERACTIVE GENERATIVE LAB</span>
+          <h2 style="font-size: 2rem; margin-bottom: 16px;">Mathematical Art in Motion</h2>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">
+            Move your cursor across the canvas to interact with the particle nodes! This real-time simulation computes repulsive gravitational forces and dynamic proximity links with the signature <strong style="color: var(--color-aero-primary);">#E0F2F4</strong> hue.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="background: var(--bg-cosmic-card); border: 1px solid var(--color-aero-border); padding: 16px; border-radius: var(--border-radius-sm);">
+              <h4 style="color: var(--color-aero-primary); margin-bottom: 4px;">1. Neural Constellation Algorithm</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">Generates autonomous node velocities linked by Euclidean distance graphs that warp dynamically around mouse coordinates.</p>
+            </div>
+            
+            <div style="background: var(--bg-cosmic-card); border: 1px solid var(--color-aero-border); padding: 16px; border-radius: var(--border-radius-sm);">
+              <h4 style="color: var(--color-aero-primary); margin-bottom: 4px;">2. Orbital Flux Field</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">Simulates rotational torque vectors representing multi-satellite swarms maintaining orbital station-keeping.</p>
+            </div>
+
+            <div style="background: var(--bg-cosmic-card); border: 1px solid var(--color-aero-border); padding: 16px; border-radius: var(--border-radius-sm);">
+              <h4 style="color: var(--color-aero-primary); margin-bottom: 4px;">3. Cosmic Trajectory Spiral</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">Applies logarithmic spirals modeling rocket ascent profiles accelerating into interplanetary transfer orbits.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Exploration Art Gallery -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Curated Visual Showcase</span>
+        <h2 class="section-title">Aero-Cosmic Digital Art Gallery</h2>
+        <p class="section-desc">Artwork representing my dual fascination with machine intelligence and outer space.</p>
+      </div>
+
+      <div class="cards-grid">
+        
+        <!-- Art Piece 1 -->
+        <div class="glass-card" style="padding: 0; overflow: hidden;">
+          <div style="height: 240px; overflow: hidden; position: relative;">
+            <img src="assets/images/hero_exploration.jpg" alt="Cosmic Explorer" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 24px;">
+            <span class="card-badge">PIECE #01</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">The Explorer's Ascent</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              Observing orbital rocket staging with real-time neural network holographic telemetry.
+            </p>
+          </div>
+        </div>
+
+        <!-- Art Piece 2 -->
+        <div class="glass-card" style="padding: 0; overflow: hidden;">
+          <div style="height: 240px; overflow: hidden; position: relative;">
+            <img src="assets/images/neural_cosmic_art.jpg" alt="Neural Cosmic Art" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 24px;">
+            <span class="card-badge">PIECE #02</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Synaptic Constellations</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              The mathematical isomorphism between biological neural pathways, AI nodes, and galactic filaments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Art Piece 3 -->
+        <div class="glass-card" style="padding: 0; overflow: hidden;">
+          <div style="height: 240px; overflow: hidden; position: relative;">
+            <img src="assets/images/satellite_cubesat.jpg" alt="Satellite Tech Art" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 24px;">
+            <span class="card-badge">PIECE #03</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Orbital Sentinel</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              CubeSat module in silent circular orbit, transmitting earth observation imagery back to ground station antennas.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Enhancement Principles -->
+  <section style="background: rgba(10, 17, 34, 0.45); border-top: 1px solid var(--color-aero-border); border-bottom: 1px solid var(--color-aero-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Modern Engineering Standards</span>
+        <h2 class="section-title">Technical Enhancements in this Portfolio</h2>
+        <p class="section-desc">Implemented with pure, lightweight vanilla HTML5, CSS3, and JavaScript.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="glass-card">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">Pure Canvas GPU Acceleration</h3>
+          <p class="card-desc">Zero heavy 3D engine overhead. Custom Canvas 2D math algorithms delivering 60 FPS performance even on mobile devices.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">🔊</div>
+          <h3 class="card-title">Web Audio API Telemetry</h3>
+          <p class="card-desc">No external MP3 files needed. Sound frequencies are generated directly in the browser's audio synthesizer for real-time robotic feedback.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">🎨</div>
+          <h3 class="card-title">Curated #E0F2F4 Aesthetic</h3>
+          <p class="card-desc">A tailored high-contrast space theme featuring ice aero cyan gradients, glassmorphism blur, and HUD telemetry badges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        <strong style="color: var(--color-aero-primary);">AERO-FOLIO</strong> — Creative Art, Animations & Tech Enhancement
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Mission Control</a></li>
+        <li><a href="space-tech.html">Space Tech Lab</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Transmission</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/starfield.js"></script>
+  <script src="assets/js/generative-art.js"></script>
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

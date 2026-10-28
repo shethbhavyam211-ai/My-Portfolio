@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transmission & Contact | AERO-FOLIO</title>
+  <meta name="description" content="Send a telemetry transmission or connect with a 1st-Year CSE (AI & ML) Space Tech Explorer.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Starfield Canvas -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-symbol">🛰️</div>
+        <span>AERO<span style="color: #fff;">PORTFOLIO</span></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Mission Control</a></li>
+        <li><a href="space-tech.html" class="nav-link">Space Tech & Satellites</a></li>
+        <li><a href="exploration-art.html" class="nav-link">Creative Art & Tech</a></li>
+        <li><a href="projects.html" class="nav-link">Projects & Labs</a></li>
+        <li><a href="contact.html" class="nav-link active">Transmission</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>COMM LINK • OPEN</span>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section style="padding: 50px 0 30px 0;">
+    <div class="container" style="text-align: center;">
+      <span class="section-tag">COMMUNICATION LINK</span>
+      <h1 style="font-size: clamp(2.4rem, 4vw, 3.6rem); margin-bottom: 16px;">
+        Open a <span class="text-gradient">Sub-Space Transmission</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 680px; margin: 0 auto;">
+        Whether you are interested in satellite telemetry collaboration, university space clubs, AI research, or hackathon partnerships—my comms channels are open.
+      </p>
+    </div>
+  </section>
+
+  <!-- Transmission Form & Social Matrix -->
+  <section style="padding-top: 10px;">
+    <div class="container">
+      
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: start;">
+        
+        <!-- Interactive Form -->
+        <div class="transmission-form-container">
+          <h2 style="font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <span>📡 Telemetry Message Packet</span>
+          </h2>
+
+          <form id="transmissionForm">
+            <div class="form-group">
+              <label class="form-label" for="senderName">CALLSIGN / NAME</label>
+              <input type="text" id="senderName" class="form-input" placeholder="e.g. Commander Alex or Prof. Vance" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="senderEmail">TRANSMISSION FREQUENCY (EMAIL)</label>
+              <input type="email" id="senderEmail" class="form-input" placeholder="youremail@domain.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="missionTopic">MISSION / SUBJECT</label>
+              <select id="missionTopic" class="form-input" style="background: rgba(14, 25, 48, 0.95);">
+                <option value="space-collaboration">🚀 Space Tech & Rocket Satellite Research</option>
+                <option value="ai-hackathon">🧠 AI & Machine Learning Hackathon</option>
+                <option value="student-club">🛰️ College Satellite Team Collaboration</option>
+                <option value="general">💬 General Exploration & Hello</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="messageContent">PACKET DATA / MESSAGE</label>
+              <textarea id="messageContent" class="form-textarea" placeholder="Enter your transmission coordinates and message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btnTransmit" style="width: 100%;">
+              <span>🚀 Broadcast Transmission Packet</span>
+            </button>
+          </form>
+
+          <!-- Telemetry Status Banner after submit -->
+          <div id="transmissionResult" style="display: none; margin-top: 20px; padding: 16px; border-radius: var(--border-radius-sm); background: rgba(0, 255, 170, 0.1); border: 1px solid var(--color-telemetry-green); color: var(--color-telemetry-green); font-family: var(--font-mono); font-size: 0.88rem;">
+            ✅ <strong>TRANSMISSION LOGGED:</strong> Packet encoded at 144.390 MHz. Telemetry received successfully! I will reply to your frequency promptly.
+          </div>
+        </div>
+
+        <!-- Social & Frequencies Matrix -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          
+          <div class="glass-card">
+            <h3 style="font-size: 1.25rem; margin-bottom: 14px; color: var(--color-aero-primary);">🛰️ Ground Stations & Socials</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+              Connect directly via any of these operational links:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <a href="https://github.com" target="_blank" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.2rem;">💻</span>
+                  <div>
+                    <div style="font-weight: 600; color: #fff;">GitHub</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted);">github.com/your-username</div>
+                  </div>
+                </div>
+                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.2rem;">💼</span>
+                  <div>
+                    <div style="font-weight: 600; color: #fff;">LinkedIn</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted);">linkedin.com/in/your-profile</div>
+                  </div>
+                </div>
+                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
+              </a>
+
+              <a href="mailto:your.email@college.edu" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.2rem;">✉️</span>
+                  <div>
+                    <div style="font-weight: 600; color: #fff;">Institutional Email</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted);">student@college.edu</div>
+                  </div>
+                </div>
+                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
+              </a>
+
+              <a href="https://discord.com" target="_blank" class="telemetry-stat-card" style="text-decoration: none; color: inherit;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.2rem;">👾</span>
+                  <div>
+                    <div style="font-weight: 600; color: #fff;">Discord / Orbit Comms</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted);">AeroExplorer#0001</div>
+                  </div>
+                </div>
+                <span style="color: var(--color-aero-primary); font-size: 0.9rem;">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Academic Status Box -->
+          <div class="glass-card" style="background: rgba(14, 25, 48, 0.4);">
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-aero-primary); margin-bottom: 6px;">CURRENT LOCATION & BASE</div>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Department of Computer Science & Engineering (AI & ML)<br>
+              Semester: 1st Year Undergrad<br>
+              Focus: Spacecraft Telemetry & Deep Learning
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        <strong style="color: var(--color-aero-primary);">AERO-FOLIO</strong> — Sub-Space Transmission Console
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Mission Control</a></li>
+        <li><a href="space-tech.html">Space Tech Lab</a></li>
+        <li><a href="exploration-art.html">Creative Art</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/starfield.js"></script>
+  <script>
+    // Form submission handling
+    const form = document.getElementById('transmissionForm');
+    const resultBanner = document.getElementById('transmissionResult');
+    if (form && resultBanner) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        resultBanner.style.display = 'block';
+        form.reset();
+        resultBanner.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
